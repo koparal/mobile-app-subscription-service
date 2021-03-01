@@ -1,11 +1,12 @@
-Mobile Application Subscription API Service.
+## Description
+Mobile Application Subscription API Service. Made with Laravel 8.
 ## Installation
 
 ```bash
 git clone https://github.com/koparal/mobile-app-subscription-service.git
 ```
 
-## Composer Install
+## Composer
 
 ```bash
 composer install
@@ -33,12 +34,13 @@ php artisan db:seed
 
 * Register
 
-    Endpoint : /api/register
+    * Endpoint : /api/register
     
-    Body : form-data
+    * Body : form-data
     
-    Params :
-    
+    * Params :
+
+
         uid
         app_id
         language
@@ -48,43 +50,49 @@ php artisan db:seed
 
 * Purchase
 
-    Endpoint : /api/subscription/purchase
+    * Endpoint : /api/subscription/purchase
     
-    Body : form-data
+    * Body : form-data
     
-    Params :
+    * Params :
+    
     
         client_token
         receipt
 
 * Check Subscription
 
-    Endpoint : /api/subscription/check
+    * Endpoint : /api/subscription/check
     
-    Body : form-data
+    * Body : form-data
     
-    Params :
+    * Params :
+    
     
         client_token
 
 ## 2. Worker
 #### Manuel Using
 
+Run queue
 ```bash
-// Run queue
 php artisan queue:work
+```
 
-// Run the command for update expired subscriptions
+Run the command for update expired subscriptions
+
+```bash
 php artisan update:expired-subscriptions
-
-// Run the command for retry failed callback events
+```
+Run the command for retry failed callback events
+```bash
 php artisan retry:failed-callback-events
 ```
 
-#### With Supervisor to Scheduling
-```bash
+#### Scheduling with Supervisor
 
-// add to config file below command.
+Please add to the supervisor config file below command.
+```bash
 php artisan schedule:run
 ```
 
