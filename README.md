@@ -39,14 +39,12 @@ php artisan db:seed
     * Body : form-data
     
     * Params :
-
-
-        uid
-        app_id
-        language
-        operating_system
-        username (optional)
-        password (optional)
+        * uid
+        * app_id
+        * language
+        * operating_system
+        * username (optional)
+        * password (optional)
 
 * Purchase
 
@@ -55,10 +53,8 @@ php artisan db:seed
     * Body : form-data
     
     * Params :
-    
-    
-        client_token
-        receipt
+        * client_token
+        * receipt
 
 * Check Subscription
 
@@ -67,9 +63,7 @@ php artisan db:seed
     * Body : form-data
     
     * Params :
-    
-    
-        client_token
+        * client_token
 
 ## 2. Worker
 #### Manuel Using
