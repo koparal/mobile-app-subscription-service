@@ -55,7 +55,7 @@ class UpdateExpiredSubscription implements ShouldQueue
 
             $this->subscription->update([
                 "status"=> SUBSCRIPTON_STATUS_CANCELED,
-                "sync_status"=> SUBSCRIPTON_SYNC_STATUS_FAILED,
+                "sync_status"=> SUBSCRIPTON_SYNC_STATUS_SUCCESS,
                 "log"=> "The subscription has been canceled. Receipt : ".$this->hash,
             ]);
 
