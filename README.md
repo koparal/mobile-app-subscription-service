@@ -92,14 +92,14 @@ php artisan schedule:run
 
 ## 3. Callback
     
-If the subscription status changes; 
+If the subscription status changes; (Via SubscriptionUpdated Event)
 
 Sends the event info via POST to the 3rd party url assigned to the application.
 
 If the 3rd party endpoint respond 500, it saves the event info in the failed_callback_events table. And then it sends the event info again to the relevant endpoint.
 
 ```bash
-php artisan retry: failed-callback-events
+php artisan retry:failed-callback-events
 ```
 
 With the command, you can resend the failed events.
